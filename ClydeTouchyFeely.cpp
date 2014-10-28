@@ -110,6 +110,6 @@ void ClydeTouchyFeely::update() {
 }
 
 // that's just calling the reset on the mp3121.
-void ClydeTouchyFeely::reset(bool autoconfig=false, uint8_t touch=0, uint8_t release=0){
+void ClydeTouchyFeely::reset(bool autoconfig, uint8_t touch, uint8_t release){
   m_mpr121.reset( autoconfig, touch, release );
 }
