@@ -34,13 +34,13 @@ class ClydeTouchyFeely : public ClydeModule {
     MPR121 m_mpr121;
 
     // -- legs
-    
+
     // delay from first detected touch to classifying as a touch
-    static const uint8_t LEG_START_THRESH = 100; 
+    static const uint8_t LEG_START_THRESH = 100;
 
     // delay from the last detected touch to the detected touch time, for classifying as released
-    static const uint8_t LEG_STOP_THRESH = 1000; 
-    
+    static const uint8_t LEG_STOP_THRESH = 1000;
+
     // just in case there is one day a mega-clyde with 5 billion legs
     static const uint8_t NUM_LEGS = 6;
 
@@ -74,6 +74,7 @@ class ClydeTouchyFeely : public ClydeModule {
 
   	bool init();
   	void update();
+	void reset( bool autoconfig=false, uint8_t touch=0, uint8_t release=0 );
 
     void setTouchedHandler(void(*function)(uint8_t l)) { touchedHandler = function; }
   	void setReleasedHandler(void(*function)(uint8_t l)) { releasedHandler = function; }
